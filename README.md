@@ -40,3 +40,14 @@ make run
 ```bash
 make clean
 ```
+
+### How to Run it
+
+```bash
+cargo run -- /path/to/your/codebase
+```
+
+### For releasing the binary
+```bash
+./target/release/lintpulse /path/to/your/codebase
+```
