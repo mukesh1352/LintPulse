@@ -1,0 +1,12 @@
+2025-09-24 22:01:36.576482 +05:30: File changed: /Users/mukesh/projects/LintPulse/src/main.rs
+2025-09-24 22:01:37.079527 +05:30: Processing file: /Users/mukesh/projects/LintPulse/src/main.rs
+2025-09-24 22:01:37.081905 +05:30: Format executed: cargo fmt /Users/mukesh/projects/LintPulse/src/main.rs
+2025-09-24 22:01:37.081909 +05:30: Lint executed: cargo clippy /Users/mukesh/projects/LintPulse/src/main.rs
+2025-09-24 22:01:45.962751 +05:30: Daemon started successfully
+2025-09-24 22:01:45.969130 +05:30: Watching directory: ./
+2025-09-24 22:01:59.574774 +05:30: File changed: /Users/mukesh/projects/LintPulse/src/commands.rs
+2025-09-24 22:02:00.128051 +05:30: Processing file: /Users/mukesh/projects/LintPulse/src/commands.rs
+2025-09-24 22:02:00.128863 +05:30: Lint executed: cargo clippy /Users/mukesh/projects/LintPulse/src/commands.rs
+2025-09-24 22:02:00.128871 +05:30: Format executed: cargo fmt /Users/mukesh/projects/LintPulse/src/commands.rs
+2025-09-24 22:02:39.591975 +05:30: File changed: /Users/mukesh/projects/LintPulse/src/config.toml
+2025-09-24 22:02:40.171137 +05:30: Processing file: /Users/mukesh/projects/LintPulse/src/config.toml

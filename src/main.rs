@@ -1,6 +1,12 @@
-mod daemon_start;
-use std::{fs, path::Path};
-use daemon_start::{load_config, run_daemon};
+mod config;
+mod logger;
+mod commands;
+mod watcher;
+mod daemon;
+
+use std::path::Path;
+use config::load_config;
+use daemon::run_daemon;
 
 fn main() {
     println!("Starting LintPulse daemon...");
@@ -13,14 +19,27 @@ fn main() {
 [daemon]
 log_file = "lintpulse.log"
 watch_path = "./"
-lint_command = "echo linting {file}"
-format_command = "echo formatting {file}"
+
+[[rules]]
+pattern = "*.rs"
+lint_command = "cargo clippy --quiet"
+format_command = "rustfmt {file}"
+
+[[rules]]
+pattern = "*.js"
+lint_command = "eslint {file}"
+format_command = "prettier --write {file}"
+
+[[rules]]
+pattern = "*.py"
+lint_command = "flake8 {file}"
+format_command = "black {file}"
 "#;
 
-        fs::write(config_path, default_config).expect("Failed to write default config.toml");
+        std::fs::write(config_path, default_config).expect("Failed to write default config.toml");
         println!("Default config.toml created.");
     }
 
     let config = load_config(config_path);
-    run_daemon(config);
+    run_daemon(config, true); // debug_mode = true
 }
