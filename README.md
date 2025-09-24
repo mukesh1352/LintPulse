@@ -1,76 +1,63 @@
-# Incremental Formatter & Linter Daemon
+# LintPulse
 
-A persistent daemon that watches your codebase and automatically formats and lints only the files that change. Supports plugins for any language using WebAssembly.
+**LintPulse** is a lightweight, incremental file-watching daemon designed for developers. It automatically runs linters and formatters on files as they change, providing instant feedback. LintPulse supports Rust, JavaScript, and Python out of the box, and can be easily extended to other languages via configuration.
+
+---
+
+## Features
+
+- Incremental file watcher daemon.
+- Supports Rust (`cargo clippy`, `cargo fmt`), JavaScript (`eslint`, `prettier`), and Python (`flake8`, `black`).
+- Logs file changes and command executions to a configurable log file (`lintpulse.log` by default).
+- Debounced processing prevents redundant executions for rapidly changing files.
+- Fully configurable via `config.toml`.
+- Modular design: simple to extend with new languages or tools.
 
 ---
 
 ## Setup
 
-### Prerequisites
-
-- Rust programming language installed
-- WASM runtime like Wasmtime installed
-- Git installed
-
----
-
 ### Rust Commands
-
-- `cargo build` — Build the Rust application
-- `cargo run` — Run the Rust application
-- `cargo check` — Quickly check your code for issues before deployment
-
----
-
-### How to Use the Makefile
-
-Use the following commands to build, run, test, and clean your project using the Makefile:
 
 - **Build the project:**
 ```bash
+cargo build
+```
+-**Run the project**
+```bash
+cargo run
+```
+
+### Using the makefile
+-**Build the project**
+```bash
 make build
 ```
-- **Run the project:**
+-**Run the project**
 ```bash
 make run
 ```
-
-- **Clean build artifacts:**
-
+-**Clean Build Artifact**
 ```bash
 make clean
 ```
 
-### NOTE:
-
----
-
-### Notes
-
-- On first run, if `config.toml` is missing, the daemon will create a default configuration file and then proceed without requiring a restart.
-- Update your `config.toml` as needed to customize log file location, watch path, and lint/format commands.
-- Logs are written to the file specified in the config (`log_file`), capturing file change events and command executions.
-- To stop the daemon, use `Ctrl+C` or appropriate OS signal.
-
----
-*For documentation purpose
+## Notes
+- On first run, if config.toml is missing, the daemon automatically creates a default configuration file.
+- Customize config.toml to adjust the log file location, watch path, and lint/format commands.
+- Logs capture file change events and executed commands.
+- To stop the daemon, use Ctrl+C or an appropriate OS signal.
+- For documentation, you can generate and open it with:
 ```bash
 cargo doc --open
 ```
-logger.rs handles logging
 
-watcher.rs handles file watching and debounce logic
 
-commands.rs handles async lint/format execution
-
-daemon.rs handles daemonization
-
-config.rs handles configuration
+## Project Structure
 src/
 ├─ main.rs         # Entry point
-├─ config.rs       # Load config.toml
+├─ config.rs       # Load and parse config.toml
 ├─ logger.rs       # Thread-safe logging
-├─ commands.rs     # Async lint/format execution
-├─ watcher.rs      # File watcher with debounce/throttle and per-file rules
+├─ commands.rs     # Async execution of lint/format commands
+├─ watcher.rs      # File watcher with debounce and per-file rules
 └─ daemon.rs       # Daemonization logic
-
