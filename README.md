@@ -41,13 +41,16 @@ make run
 make clean
 ```
 
-### How to Run it
+### NOTE:
 
-```bash
-cargo run -- /path/to/your/codebase
-```
+---
 
-### For releasing the binary
-```bash
-./target/release/lintpulse /path/to/your/codebase
-```
+### Notes
+
+- On first run, if `config.toml` is missing, the daemon will create a default configuration file and then proceed without requiring a restart.
+- Update your `config.toml` as needed to customize log file location, watch path, and lint/format commands.
+- Logs are written to the file specified in the config (`log_file`), capturing file change events and command executions.
+- To stop the daemon, use `Ctrl+C` or appropriate OS signal.
+
+---
+

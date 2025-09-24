@@ -1,0 +1,6 @@
+
+[daemon]
+log_file = "lintpulse.log"
+watch_path = "./"
+lint_command = "echo linting {file}"
+format_command = "echo formatting {file}"
