@@ -1,0 +1,2 @@
+window.ALL_CRATES = ["bitflags","boxfnonce","chrono","core_foundation_sys","daemonize","fsevent_sys","iana_time_zone","libc","lintpulse","log","notify","notify_types","num_traits","proc_macro2","quote","same_file","serde","serde_core","serde_derive","serde_spanned","syn","toml","toml_datetime","toml_parser","toml_writer","unicode_ident","walkdir","winnow"];
+//{"start":21,"fragment_lengths":[10,12,9,22,12,14,17,7,12,6,9,15,13,14,8,12,8,13,15,16,6,7,16,14,14,16,10,9]}

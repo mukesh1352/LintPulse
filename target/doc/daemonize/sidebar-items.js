@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["DaemonizeError","Group","User"],"struct":["Daemonize","Stdio"],"type":["Errno","gid_t","mode_t","uid_t"]};
