@@ -5,28 +5,39 @@ Contributions to LintPulse are warmly welcomed! Whether it’s fixing bugs, impr
 To contribute:
 
 1. **Fork the repository** and create a feature branch.
+```bash
 git clone https://github.com/your-username/LintPulse.git
 cd LintPulse
+```
 # Create and switch to a new feature branch
+```bash
 git checkout -b feature/your-feature-name
+```
 2. **Write clear, focused commits** with descriptive messages.
 # Stage your changed files
+```bash
 git add path/to/changed/file
+```
 
 # Create a descriptive commit
+```bash
 git commit -m "Short summary of changes
+```
 
 4. **Submit a pull request** with a detailed description of your changes and their impact.
 # Push your feature branch to your fork
+```bash
 git push origin feature/your-feature-name
+```
 
 5. Participate in code reviews and discussions to refine your contribution.
 
 ### Summary of Common Commands
+```bash
 git clone <fork-url>
 git checkout -b feature/your-feature-name
 git add <files>
 git commit -m "commit message"
 cargo test
 git push origin feature/your-feature-name
-
+```
